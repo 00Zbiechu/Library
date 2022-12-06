@@ -5,3 +5,6 @@ databaseChangeLog:
   - include:
       file: ./changes/2022-24-11/CREATE_SEQUENCES.yml
       relativeToChangelogFile: true
+  - include:
+      file: ./changes/2022-24-11/CREATE_TABLE_CUSTOMER.yml
+      relativeToChangelogFile: true

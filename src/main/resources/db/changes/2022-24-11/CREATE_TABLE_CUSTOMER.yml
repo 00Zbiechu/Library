@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_CUSTOMER
+      author: 00zbiechu
+      changes:
+        - createTable:
+            tableName: CUSTOMER
+            columns:
+              - column:
+                  name: id
+                  type: NUMBER(38,0)
+                  constraints:
+                    - primaryKey: true
+                      primaryKeyName: CUSTOMER_ID_PK
+                      nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_number
+                  type: varchar(9)
+              - column:
+                  name: birth_date
+                  type: date
