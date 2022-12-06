@@ -11,3 +11,6 @@ databaseChangeLog:
   - include:
       file: ./changes/2022-24-11/CREATE_TABLE_ADDRESS.yml
       relativeToChangelogFile: true
+  - include:
+      file: ./changes/2022-24-11/CREATE_TABLE_BOOK.yml
+      relativeToChangelogFile: true
