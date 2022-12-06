@@ -1,0 +1,53 @@
+CREATE TABLE CUSTOMER (
+id bigint primary key,
+first_name varchar(50) not null,
+surname varchar(50) not null,
+phone_number varchar(9),
+birth_date date
+);
+
+CREATE TABLE ADDRESS (
+id bigint primary key,
+street varchar(100) not null,
+zip_code varchar(6),
+house_number varchar(25),
+city varchar(100) not null,
+customer_id bigint references customer(id)
+);
+
+CREATE TABLE AUTHOR (
+id bigint primary key,
+first_name varchar(50) not null,
+surname varchar(50) not null,
+birth_date date
+);
+
+CREATE TABLE BOOK (
+id bigint primary key,
+status varchar(25) not null,
+title varchar(50) not null,
+create_year numeric(4) not null
+);
+
+CREATE TABLE RENT (
+id bigint primary key,
+rent_started timestamp,
+rent_ended timestamp,
+customer_id bigint references customer(id),
+book_id bigint references book(id)
+);
+
+create table AUTHOR_BOOK (
+author_id bigint references author(id),
+book_id bigint references book(id),
+primary key (author_id, book_id)
+);
+
+
+CREATE SEQUENCE address_id_seq START 1;
+CREATE SEQUENCE book_id_seq START 1;
+CREATE SEQUENCE rent_id_seq START 1;
+CREATE SEQUENCE author_id_seq START 1;
+CREATE SEQUENCE customer_id_seq START 1;
+
+https://stackabuse.com/a-guide-to-jpa-with-hibernate-relationship-mapping/
