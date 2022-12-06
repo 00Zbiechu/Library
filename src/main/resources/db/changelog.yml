@@ -17,3 +17,6 @@ databaseChangeLog:
   - include:
       file: ./changes/2022-24-11/CREATE_TABLE_AUTHOR.yml
       relativeToChangelogFile: true
+  - include:
+      file: ./changes/2022-24-11/CREATE_TABLE_AUTHOR_BOOK.yml
+      relativeToChangelogFile: true

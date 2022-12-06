@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_table_AUTHOR_BOOK
+      author: 00zbiechu
+      changes:
+        - createTable:
+            tableName: AUTHOR_BOOK
+            columns:
+              - column:
+                  name: author_id
+                  type: NUMBER(38,0)
+                  constraints:
+                    - primaryKey: true
+                      primaryKeyName: AUTHOR_BOOK_PK
+                      nullable: false
+              - column:
+                  name: book_id
+                  type: NUMBER(38,0)
+                  constraints:
+                    - primaryKey: true
+                      primaryKeyName: AUTHOR_BOOK_PK
+                      nullable: false
+
+  - changeSet:
+      id: create_author_book_author_id_fk
+      author: 00zbiechu
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: AUTHOR_ID
+            baseTableName: AUTHOR_BOOK
+            referencedColumnNames: ID
+            referencedTableName: AUTHOR
+            constraintName: AUTHOR_BOOK_AUTHOR_ID_FK
+
+
+  - changeSet:
+      id: create_author_book_book_id_fk
+      author: 00zbiechu
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: BOOK_ID
+            baseTableName: AUTHOR_BOOK
+            referencedColumnNames: ID
+            referencedTableName: BOOK
+            constraintName: AUTHOR_BOOK_BOOK_ID_FK
