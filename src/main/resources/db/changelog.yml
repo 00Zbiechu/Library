@@ -2,3 +2,6 @@ databaseChangeLog:
   - include:
       file: ./changes/2022-24-11/INIT_DATABASE.yml
       relativeToChangelogFile: true
+  - include:
+      file: ./changes/2022-24-11/CREATE_SEQUENCES.yml
+      relativeToChangelogFile: true
