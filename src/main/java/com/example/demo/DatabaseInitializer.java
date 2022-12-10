@@ -22,7 +22,6 @@ public class DatabaseInitializer {
     private final RentRepository rentRepository;
 
 
-/*
     @PostConstruct
     public void initDatabase(){
 
@@ -83,7 +82,5 @@ public class DatabaseInitializer {
 
     }
 
-
- */
 
 }

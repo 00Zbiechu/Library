@@ -1,25 +1,25 @@
 databaseChangeLog:
   - include:
-      file: ./changes/2022-24-11/INIT_DATABASE.yml
+      file: ./2022-10-12-changes/INIT_DATABASE.yml
       relativeToChangelogFile: true
   - include:
-      file: ./changes/2022-24-11/CREATE_SEQUENCES.yml
+      file: ./2022-10-12-changes/CREATE_SEQUENCE.yml
       relativeToChangelogFile: true
   - include:
-      file: ./changes/2022-24-11/CREATE_TABLE_CUSTOMER.yml
+      file: ./2022-10-12-changes/CREATE_TABLE_CUSTOMER.yml
       relativeToChangelogFile: true
   - include:
-      file: ./changes/2022-24-11/CREATE_TABLE_ADDRESS.yml
+      file: ./2022-10-12-changes/CREATE_TABLE_ADDRESS.yml
       relativeToChangelogFile: true
   - include:
-      file: ./changes/2022-24-11/CREATE_TABLE_BOOK.yml
+      file: ./2022-10-12-changes/CREATE_TABLE_BOOK.yml
       relativeToChangelogFile: true
   - include:
-      file: ./changes/2022-24-11/CREATE_TABLE_AUTHOR.yml
+      file: ./2022-10-12-changes/CREATE_TABLE_AUTHOR.yml
       relativeToChangelogFile: true
   - include:
-      file: ./changes/2022-24-11/CREATE_TABLE_AUTHOR_BOOK.yml
+      file: ./2022-10-12-changes/CREATE_TABLE_AUTHOR_BOOK.yml
       relativeToChangelogFile: true
   - include:
-      file: ./changes/2022-24-11/CREATE_TABLE_RENT.yml
+      file: ./2022-10-12-changes/CREATE_TABLE_RENT.yml
       relativeToChangelogFile: true
