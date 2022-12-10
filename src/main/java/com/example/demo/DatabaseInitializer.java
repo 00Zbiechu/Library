@@ -34,6 +34,17 @@ public class DatabaseInitializer {
 
         customerRepository.save(customer);
 
+
+        Customer customerSecond = Customer.builder()
+                .firstName("Damian")
+                .surname("Nowak")
+                .phoneNumber("123456789")
+                .birthDate(LocalDate.of(2000,2,20))
+                .build();
+
+        customerRepository.save(customerSecond);
+
+
         Address address = Address.builder()
                 .street("Podgorna")
                 .zipCode("75-400")
@@ -43,6 +54,17 @@ public class DatabaseInitializer {
                 .build();
 
         addressRepository.save(address);
+
+
+        Address addressSecond = Address.builder()
+                .street("Budowniczych")
+                .zipCode("75-400")
+                .houseNumber("3/2")
+                .city("Koszalin")
+                .customer(customerSecond)
+                .build();
+
+        addressRepository.save(addressSecond);
 
 
 

@@ -54,4 +54,15 @@ public class CustomerServiceImpl implements CustomerService{
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
     }
+
+
+    @Override
+    public List<CustomerDTO> findAllCustomerWithName(String name){
+
+        return customerRepository.findAllCustomerWithName(name).stream()
+                .map(CustomerMapper.INSTANCE::customerToDTO)
+                .collect(Collectors.toList());
+
+    }
+
 }

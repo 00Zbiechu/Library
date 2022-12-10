@@ -7,8 +7,12 @@ import com.example.demo.model.AuthorDTO;
 import com.example.demo.model.AuthorMapper;
 import com.example.demo.repository.AuthorRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,4 +56,24 @@ public class AuthorServiceImpl implements AuthorService{
     public void deleteAuthor(Long id) {
         authorRepository.deleteById(id);
     }
+
+
+    @Override
+    public List<AuthorDTO> findAuthorBySurname(String surname){
+
+        return authorRepository.findAuthorBySurname(surname).stream()
+                .map(AuthorMapper.INSTANCE::authorToDTO).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public List<AuthorDTO> findAuthorWithNameAdam(){
+
+        return authorRepository.findAuthorsWithNameAdam().stream()
+                .map(AuthorMapper.INSTANCE::authorToDTO)
+                .collect(Collectors.toList());
+
+    }
+
+
 }

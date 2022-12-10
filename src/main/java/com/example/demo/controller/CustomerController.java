@@ -52,5 +52,14 @@ public class CustomerController {
 
         return "Deleted Successfully";
     }
+
+
+    //Custome Querys
+    @GetMapping("/name/{name}")
+    public List<CustomerDTO> findAllCustomerWithName(@PathVariable("name") String name){
+
+        return customerService.findAllCustomerWithName(name);
+
+    }
     
 }

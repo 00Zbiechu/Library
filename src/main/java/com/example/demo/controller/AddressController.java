@@ -56,4 +56,12 @@ public class AddressController {
         return "Deleted Successfully";
     }
 
+
+    @GetMapping("/addressandcustomers")
+    public List<AddressDTO> findAllAddressAndCustomers(){
+
+       return addressService.findAllAddressAndCustomers();
+
+    }
+
 }

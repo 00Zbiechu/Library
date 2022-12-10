@@ -16,4 +16,6 @@ public interface CustomerService {
 
     void deleteCustomer(Long id);
 
+    List<CustomerDTO> findAllCustomerWithName(String name);
+
 }

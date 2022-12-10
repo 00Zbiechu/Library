@@ -58,4 +58,20 @@ public class AuthorController {
         return "Deleted Successfully";
     }
 
+
+    //Custom Querys
+    @GetMapping("surname/{surname}")
+    public List<AuthorDTO> findAuthorBySurname(@PathVariable("surname") String surname){
+
+        return authorService.findAuthorBySurname(surname);
+
+    }
+
+    @GetMapping("firstNameAdam")
+    public List<AuthorDTO> findAuthorWithNameAdam(){
+
+        return authorService.findAuthorWithNameAdam();
+
+    }
+
 }

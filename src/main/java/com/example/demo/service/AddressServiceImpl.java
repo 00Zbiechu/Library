@@ -6,6 +6,7 @@ import com.example.demo.model.AddressDTO;
 import com.example.demo.model.AddressMapper;
 import com.example.demo.repository.AddressRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,6 +53,16 @@ public class AddressServiceImpl implements AddressService{
     public void deleteAddress(Long id) {
 
         addressRepository.deleteById(id);
+
+    }
+
+
+    @Override
+    public List<AddressDTO> findAllAddressAndCustomers(){
+
+        return addressRepository.findAllAddressAndCustomers(PageRequest.of(0,2)).stream()
+                .map(AddressMapper.INSTANCE::addressToDTO)
+                .collect(Collectors.toList());
 
     }
 }

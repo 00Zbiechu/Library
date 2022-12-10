@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.Address;
 import com.example.demo.model.AddressDTO;
 
 import java.util.List;
@@ -15,5 +16,7 @@ public interface AddressService{
     AddressDTO updateAddress(Long id, AddressDTO addressDTO);
 
     void deleteAddress(Long id);
+
+    List<AddressDTO> findAllAddressAndCustomers();
 
 }
